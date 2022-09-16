@@ -1,1 +1,1 @@
-# TODO:  Напишите свой вариант
+"""URLs request handlers of the 'api' application."""
