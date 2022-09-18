@@ -24,7 +24,7 @@ Create and activate virtual environment
 py -3.7 -m venv env
 ```
 ```
-source venv/bin/activate
+source venv/Scripts/activate
 ```
 Install dependencies from requirements.txt file
 ```
