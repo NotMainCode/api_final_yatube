@@ -86,7 +86,7 @@ Adding new users via the API is not possible.
 >>api/v1/follow/?search=username
 >>
 
-- ### create new following *(POST)*
+- create new following *(POST)*
 >api/v1/follow/
 >```
 >{
