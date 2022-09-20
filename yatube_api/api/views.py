@@ -13,7 +13,7 @@ from api.serializers import (
     PostSerializer,
 )
 from api.viewsets import CreateListViewSet
-from posts.models import Group, Post
+from posts.models import Group, Post, User
 
 
 class PostViewSet(viewsets.ModelViewSet):
@@ -52,7 +52,8 @@ class FollowViewSet(CreateListViewSet):
     search_fields = ("following__username",)
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+        following = User.objects.get(username=self.request.data["following"])
+        serializer.save(user=self.request.user, following=following)
 
     def get_queryset(self):
-        return self.request.user.follower.select_related("following")
+        return self.request.user.follower.select_related("user", "following")
