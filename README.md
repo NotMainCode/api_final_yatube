@@ -6,13 +6,14 @@ The API is fully accessible only to authenticated users (JWT-tokens + Djoser).
 
 Authenticated user has the right to change and delete their content; otherwise, read-only access.
 
-Unauthenticated users have read-only access to the API. The exception is the /follow/ endpoint: access to it is granted only to authenticated users.
+Unauthenticated users have read-only access to the API.
+The exception is the /follow/ endpoint: access to it is granted only to authenticated users.
 
 Adding new users via the API is not possible.
 
 ## Endpoints
 
-- ###getting JWT-token *(POST)*
+- getting JWT-token *(POST)*
 >api/v1/jwt/create/ 
 >```
 >{
@@ -21,7 +22,7 @@ Adding new users via the API is not possible.
 >}
 >```
 
-- ### refreshing JWT-token *(POST)*
+- refreshing JWT-token *(POST)*
 >api/v1/jwt/refresh/ 
 >```
 >{
@@ -29,7 +30,7 @@ Adding new users via the API is not possible.
 >}
 >```
 
-- ### verifying JWT-token *POST)*
+- verifying JWT-token *POST)*
 >api/v1/jwt/verify/ 
 >```
 >{
@@ -37,7 +38,7 @@ Adding new users via the API is not possible.
 >}
 >```
 
-- ### getting list of all posts *(GET)*
+- getting list of all posts *(GET)*
 >api/v1/posts/
 >>paginate results with the number of posts per page
 >>>api/v1/posts/?limit={post_count}
@@ -45,7 +46,7 @@ Adding new users via the API is not possible.
 >>...with starting position of the query in relation to the complete set of unpaginated items
 >>>api/v1/posts/?limit={post_count}&offset={start_after}
 
-- ### create new post. Only "text" field is required *(POST)*
+- create new post. Only "text" field is required *(POST)*
 >api/v1/posts/ 
 >```
 >{
@@ -55,19 +56,19 @@ Adding new users via the API is not possible.
 >}
 >```
 
-- ### getting, editing or deleting post with id=post_id *(GET, PUT, PATCH, DELETE)*
+- getting, editing or deleting post with id=post_id *(GET, PUT, PATCH, DELETE)*
 >api/v1/posts/{post_id}/
 
-- ### getting list of all groups *(GET)*
+- getting list of all groups *(GET)*
 >api/v1/groups/
 
-- ### getting information about group with id=group_id *(GET)*
+- getting information about group with id=group_id *(GET)*
 >api/v1/groups/{group_id}/
 
-- ### getting list of all post comments with id=post_id *(GET)*
+- getting list of all post comments with id=post_id *(GET)*
 >api/v1/posts/{post_id}/comments/
 
-- ### create new post comment with id=post_id *(POST)*
+- create new post comment with id=post_id *(POST)*
 >api/v1/posts/{post_id}/comments/
 >```
 >{
@@ -75,17 +76,17 @@ Adding new users via the API is not possible.
 >}
 >```
 
-- ### getting, editing or deleting comment with id=comment_id for post with id=post_id *(GET, PUT, PATCH, DELETE)*
+- getting, editing or deleting comment with id=comment_id for post with id=post_id *(GET, PUT, PATCH, DELETE)*
 >api/v1/posts/{post_id}/comments/{comment_id}/
 
-- ### getting list of all followings of user who made request *(GET)*
+- getting list of all followings of user who made request *(GET)*
 >api/v1/follow/
 >>partial match case-insensitive search available *(GET)*
->>```
+>>
 >>api/v1/follow/?search=username
->>```
+>>
 
-- ### create new following *(POST)*
+- create new following *(POST)*
 >api/v1/follow/
 >```
 >{
