@@ -16,10 +16,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "debug_toolbar",
     "rest_framework",
     "djoser",
-    "api",
     "posts",
+    "api",
 ]
 
 MIDDLEWARE = [
@@ -30,6 +31,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "yatube_api.urls"
@@ -90,14 +92,25 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static/"),)
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
+INTERNAL_IPS = ["127.0.0.1"]
+
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsAuthenticatedOrReadOnly",
+        "rest_framework.permissions.IsAuthenticated",
     ],
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ],
 }
+if DEBUG:
+    REST_FRAMEWORK.update(
+        {
+            "DEFAULT_AUTHENTICATION_CLASSES": [
+                "rest_framework_simplejwt.authentication.JWTAuthentication",
+                "rest_framework.authentication.SessionAuthentication",
+            ]
+        }
+    )
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=1),

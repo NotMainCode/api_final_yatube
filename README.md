@@ -11,6 +11,9 @@ The exception is the /follow/ endpoint: access to it is granted only to authenti
 
 Adding new users via the API is not possible.
 
+Full API documentation is available at endpoint:
+>redoc/
+
 ## Endpoints
 
 - getting JWT-token *(POST)*
@@ -128,7 +131,7 @@ py manage.py runserver 8008
 
 ## Author
 
-NotMainCode
+https://github.com/NotMainCode
 
 ###
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
