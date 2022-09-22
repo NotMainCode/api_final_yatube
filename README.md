@@ -21,7 +21,7 @@ Full API documentation is available at endpoint:
 >```
 >{
 >    "username": "my_username",
->    "password": "my_password*"
+>    "password": "my_password"
 >}
 >```
 
