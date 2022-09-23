@@ -1,4 +1,4 @@
-"""URLs configuration of the 'api' application."""
+"""URLs configuration of the 'api' application v1."""
 
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
@@ -9,8 +9,6 @@ from api.v1.views import (
     GroupViewSet,
     PostViewSet,
 )
-
-app_name = "api"
 
 router_v1 = DefaultRouter()
 

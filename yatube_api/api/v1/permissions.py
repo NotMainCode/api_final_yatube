@@ -6,6 +6,8 @@ from rest_framework import permissions
 class IsAuthorOrReadOnly(permissions.BasePermission):
     """Object-level permission to only allow authors of object to edit it."""
 
+    message = "Only the author has permission to perform this action."
+
     def has_permission(self, request, view):
         return (
             request.method in permissions.SAFE_METHODS

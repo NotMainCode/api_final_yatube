@@ -15,7 +15,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "debug_toolbar",
     "rest_framework",
     "djoser",
     "posts",
@@ -102,6 +101,7 @@ REST_FRAMEWORK = {
     ],
 }
 if DEBUG:
+    INSTALLED_APPS.append("debug_toolbar")
     REST_FRAMEWORK.update(
         {
             "DEFAULT_AUTHENTICATION_CLASSES": [
