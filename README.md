@@ -109,7 +109,7 @@ Django REST framework 3.2.14
 
 Create and activate virtual environment
 ```
-py -3.7 -m venv env
+py -3.7 -m venv venv
 
 source venv/Scripts/activate
 ```

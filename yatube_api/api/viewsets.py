@@ -1,4 +1,4 @@
-"""Custom viewsets"""
+"""Custom viewsets."""
 
 from rest_framework import mixins, viewsets
 
@@ -8,4 +8,4 @@ class CreateListViewSet(
     mixins.ListModelMixin,
     viewsets.GenericViewSet,
 ):
-    pass
+    """Viewset allows methods: GET(queryset), POST"""
