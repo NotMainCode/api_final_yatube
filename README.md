@@ -103,7 +103,9 @@ Python 3.7
 
 Django 2.2.16
 
-Django REST framework 3.2.14
+Django REST framework 3.12.4
+
+Simple JWT 4.7.2
 
 ## For launch
 
